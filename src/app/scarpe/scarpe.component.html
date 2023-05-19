@@ -1,14 +1,17 @@
 <h3>Ecommerce - scarpe</h3>
 <table>
-    <tr>
-        <td>ID</td>
-        <td>Nome</td>
-        <td>Prezzo</td>
-    </tr>
-    <td></td>
-    <tr *ngFor="let s in scarpe">
-        <td>{{ s.id }} </td>
-        <td>{{ s.nome }} </td>
-        <td><i>{{ s.prezzo }}</i></td>
-    </tr>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Prezzo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s in scarpe">
+            <td>{{ s.id }} </td>
+            <td>{{ s.nome }} </td>
+            <td><i>€ {{ s.prezzo }}</i></td>
+        </tr>
+    </tbody>
 </table>

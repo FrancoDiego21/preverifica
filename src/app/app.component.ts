@@ -15,7 +15,14 @@ export class AppComponent {
   oEcommerce : Observable<Ecommerce>;
 
   constructor(public http: HttpClient){
-    this.oEcommerce = http.get<Ecommerce>(this.URL);
-    this.oEcommerce.subscribe( d => this.data = d );
+  }
+
+  ngOnInit(): void{
+    this.oEcommerce = this.http.get<Ecommerce>(this.URL);
+    this.oEcommerce.subscribe( d => {
+      this.data = d 
+      //alert(this.data.magliette.length)
+    });
+
   }
 }
